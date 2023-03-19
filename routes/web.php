@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    echo 'welcome evan fadilah & raihandany';
-    echo 'tes';
+    return view('home');
 
 });
