@@ -16,7 +16,7 @@ use App\Http\Controllers\SellController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 
 });
 
@@ -28,3 +28,9 @@ Route::get('/bb', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', 'AppController@index')->name('home');
+Route::get('/shop', 'AppController@index')->name('home')->middleware('auth');
+Route::get('/cart', 'AppController@index')->name('home')->middleware('auth');
+Route::get('/admin', 'AppController@admin')->name('admin')->middleware('auth');
+Route::get('/admin/{any}', 'AppController@admin')->where('any', '.*')->middleware('auth');
+Route::get('/{any}', 'AppController@index')->where('any', '.*');
