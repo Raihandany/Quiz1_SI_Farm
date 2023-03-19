@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    echo 'welcome evan fadilah d';
+    echo 'welcome evan fadilah & raihandany';
+
 });
